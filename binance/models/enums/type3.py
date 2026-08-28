@@ -1,0 +1,28 @@
+from enum import Enum
+from typing import Annotated, TypeAlias
+
+from ...core import open_enum_validator
+
+
+class Type3(str, Enum):
+    TRANSFER = "TRANSFER"
+    BORROW = "BORROW"
+    REPAY = "REPAY"
+    BUY_INCOME = "BUY_INCOME"
+    BUY_EXPENSE = "BUY_EXPENSE"
+    SELL_INCOME = "SELL_INCOME"
+    SELL_EXPENSE = "SELL_EXPENSE"
+    TRADING_COMMISSION = "TRADING_COMMISSION"
+    BUY_LIQUIDATION = "BUY_LIQUIDATION"
+    SELL_LIQUIDATION = "SELL_LIQUIDATION"
+    REPAY_LIQUIDATION = "REPAY_LIQUIDATION"
+    OTHER_LIQUIDATION = "OTHER_LIQUIDATION"
+    LIQUIDATION_FEE = "LIQUIDATION_FEE"
+    SMALL_BALANCE_CONVERT = "SMALL_BALANCE_CONVERT"
+    COMMISSION_RETURN = "COMMISSION_RETURN"
+    SMALL_CONVERT = "SMALL_CONVERT"
+
+    __str__ = str.__str__
+
+
+Type3OrStr: TypeAlias = Annotated[Type3 | str, open_enum_validator(Type3)]

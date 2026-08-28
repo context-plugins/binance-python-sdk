@@ -1,0 +1,12 @@
+from __future__ import annotations
+
+from typing import TypeAlias
+
+from ..sub_account_coinfutures_summary import SubAccountCoinfuturesSummary, SubAccountCoinfuturesSummaryDict
+from ..sub_account_usdtfutures_summary import SubAccountUsdtfuturesSummary, SubAccountUsdtfuturesSummaryDict
+
+SapiV2SubAccountFuturesAccountSummaryResponse: TypeAlias = SubAccountUsdtfuturesSummary | SubAccountCoinfuturesSummary
+
+SapiV2SubAccountFuturesAccountSummaryResponseDict: TypeAlias = (
+    SubAccountUsdtfuturesSummaryDict | SubAccountCoinfuturesSummaryDict
+)
