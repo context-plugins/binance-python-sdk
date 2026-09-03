@@ -2,13 +2,14 @@
 
 # DualInvestment — operations
 
-Accessor: `client.dual_investment` · Source: `binance/apis/dual_investment.py` · 5 operations
+Accessor: `client.dual_investment` · Source: `binance_public_spot_api/apis/dual_investment.py` · 5 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
 ### client.dual_investment.change_auto_compound_status_user_data
 
 - **Route**: `POST /sapi/v1/dci/product/auto_compound/edit-status`
+- **Auth**: `api_key_auth`
 - **Signature**: `def change_auto_compound_status_user_data(position_id: int, auto_compound_plan: AutoCompoundPlanOrStr, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `position_id`, `auto_compound_plan`, `timestamp`, `signature`
 - **Params**: `position_id` — query `positionId` · `auto_compound_plan` — query `autoCompoundPlan` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -19,14 +20,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AutoCompoundPlanOrStr` | `binance/models/enums/auto_compound_plan.py` |
-| `SapiV1DciProductAutoCompoundEditStatusResponse` | `binance/models/sapi_v1_dci_product_auto_compound_edit_status_response.py` |
-| `ChangeAutoCompoundStatusUserDataErrorBody` | `binance/errors/change_auto_compound_status_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `AutoCompoundPlanOrStr` | `binance_public_spot_api/models/enums/auto_compound_plan.py` |
+| `SapiV1DciProductAutoCompoundEditStatusResponse` | `binance_public_spot_api/models/sapi_v1_dci_product_auto_compound_edit_status_response.py` |
+| `ChangeAutoCompoundStatusUserDataErrorBody` | `binance_public_spot_api/errors/change_auto_compound_status_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.dual_investment.check_dual_investment_accounts_user_data
 
 - **Route**: `GET /sapi/v1/dci/product/accounts`
+- **Auth**: `api_key_auth`
 - **Signature**: `def check_dual_investment_accounts_user_data(timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -37,13 +39,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1DciProductAccountsResponse` | `binance/models/sapi_v1_dci_product_accounts_response.py` |
-| `CheckDualInvestmentAccountsUserDataErrorBody` | `binance/errors/check_dual_investment_accounts_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1DciProductAccountsResponse` | `binance_public_spot_api/models/sapi_v1_dci_product_accounts_response.py` |
+| `CheckDualInvestmentAccountsUserDataErrorBody` | `binance_public_spot_api/errors/check_dual_investment_accounts_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.dual_investment.get_dual_investment_positions_user_data
 
 - **Route**: `GET /sapi/v1/dci/product/positions`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_dual_investment_positions_user_data(timestamp: int, signature: str, *, status: Status2OrStr | None = None, page_size: str | None = None, page_index: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `status` — query · `page_size` — query `pageSize` · `page_index` — query `pageIndex` · `recv_window` — query `recvWindow`
@@ -54,14 +57,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Status2OrStr` | `binance/models/enums/status2.py` |
-| `SapiV1DciProductPositionsResponse` | `binance/models/sapi_v1_dci_product_positions_response.py` |
-| `GetDualInvestmentPositionsUserDataErrorBody` | `binance/errors/get_dual_investment_positions_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `Status2OrStr` | `binance_public_spot_api/models/enums/status2.py` |
+| `SapiV1DciProductPositionsResponse` | `binance_public_spot_api/models/sapi_v1_dci_product_positions_response.py` |
+| `GetDualInvestmentPositionsUserDataErrorBody` | `binance_public_spot_api/errors/get_dual_investment_positions_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.dual_investment.get_dual_investment_product_list_user_data
 
 - **Route**: `GET /sapi/v1/dci/product/list`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_dual_investment_product_list_user_data(option_type: OptionTypeOrStr, exercised_coin: str, invest_coin: str, timestamp: int, signature: str, *, page_size: str | None = None, page_index: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `option_type`, `exercised_coin`, `invest_coin`, `timestamp`, `signature`
 - **Params**: `option_type` — query `optionType` · `exercised_coin` — query `exercisedCoin` · `invest_coin` — query `investCoin` · `timestamp` — query · `signature` — query · `page_size` — query `pageSize` · `page_index` — query `pageIndex` · `recv_window` — query `recvWindow`
@@ -72,14 +76,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `OptionTypeOrStr` | `binance/models/enums/option_type.py` |
-| `SapiV1DciProductListResponse` | `binance/models/sapi_v1_dci_product_list_response.py` |
-| `GetDualInvestmentProductListUserDataErrorBody` | `binance/errors/get_dual_investment_product_list_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `OptionTypeOrStr` | `binance_public_spot_api/models/enums/option_type.py` |
+| `SapiV1DciProductListResponse` | `binance_public_spot_api/models/sapi_v1_dci_product_list_response.py` |
+| `GetDualInvestmentProductListUserDataErrorBody` | `binance_public_spot_api/errors/get_dual_investment_product_list_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.dual_investment.subscribe_dual_investment_products_user_data
 
 - **Route**: `POST /sapi/v1/dci/product/subscribe`
+- **Auth**: `api_key_auth`
 - **Signature**: `def subscribe_dual_investment_products_user_data(id: str, order_id: str, deposit_amount: float, auto_compound_plan: AutoCompoundPlanOrStr, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `id`, `order_id`, `deposit_amount`, `auto_compound_plan`, `timestamp`, `signature`
 - **Params**: `id` — query · `order_id` — query `orderId` · `deposit_amount` — query `depositAmount` · `auto_compound_plan` — query `autoCompoundPlan` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -90,8 +95,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AutoCompoundPlanOrStr` | `binance/models/enums/auto_compound_plan.py` |
-| `SapiV1DciProductSubscribeResponse` | `binance/models/sapi_v1_dci_product_subscribe_response.py` |
-| `SubscribeDualInvestmentProductsUserDataErrorBody` | `binance/errors/subscribe_dual_investment_products_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `AutoCompoundPlanOrStr` | `binance_public_spot_api/models/enums/auto_compound_plan.py` |
+| `SapiV1DciProductSubscribeResponse` | `binance_public_spot_api/models/sapi_v1_dci_product_subscribe_response.py` |
+| `SubscribeDualInvestmentProductsUserDataErrorBody` | `binance_public_spot_api/errors/subscribe_dual_investment_products_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 

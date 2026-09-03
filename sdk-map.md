@@ -1,14 +1,14 @@
 <!-- Generated file — do not edit; regenerated with the SDK. -->
 
-# SDK map — Binance (Python)
+# SDK map — Binance Public Spot API (Python)
 
 > A generated table of contents for this SDK. Consult this map and its sub-pages to learn signatures, error types, and server/auth wiring **by lookup**. Model shapes and enum values are *not* duplicated here — the map names the module declaring each type; read the shape there. Every name is the emitted spelling, so a wrong one fails at import rather than working silently.
 
 |  |  |
 | --- | --- |
-| SDK display name | Binance |
-| Root package | `binance` |
-| Distribution name | `binance` |
+| SDK display name | Binance Public Spot API |
+| Root package | `binance_public_spot_api` |
+| Distribution name | `binance-public-spot-api` |
 | Requires | Python 3.10 or later |
 | API spec version | `1.0` |
 | Generator | APIMatic |
@@ -24,27 +24,27 @@ All `Source` paths on this map and its sub-pages are relative to the **SDK root*
 ### Synchronous client
 
 ```python
-from binance import BinanceClient
+from binance_public_spot_api import BinancePublicSpotApiClient
 
-client = BinanceClient(api_key_auth="YOUR_API_KEY", environment="production")
+client = BinancePublicSpotApiClient(api_key_auth="YOUR_API_KEY", environment="production")
 
 # TODO: call endpoints here -- see api-reference.md
 
 client.close()
 ```
 
-Alternatively, scope it — `with BinanceClient(...) as client:` closes the pool on exit.
+Alternatively, scope it — `with BinancePublicSpotApiClient(...) as client:` closes the pool on exit.
 
 ### Asynchronous client
 
 ```python
 from asyncio import run
 
-from binance import AsyncBinanceClient
+from binance_public_spot_api import AsyncBinancePublicSpotApiClient
 
 
 async def main() -> None:
-    client = AsyncBinanceClient(api_key_auth="YOUR_API_KEY", environment="production")
+    client = AsyncBinancePublicSpotApiClient(api_key_auth="YOUR_API_KEY", environment="production")
     # TODO: call endpoints here, awaiting each -- see api-reference.md
     await client.aclose()
 
@@ -52,15 +52,15 @@ async def main() -> None:
 run(main())
 ```
 
-Alternatively, scope it — `async with AsyncBinanceClient(...) as client:` closes the pool on exit.
+Alternatively, scope it — `async with AsyncBinancePublicSpotApiClient(...) as client:` closes the pool on exit.
 
-`AsyncClient` (`binance/async_client.py`) mirrors `Client` method for method, each endpoint method a coroutine. It takes the same keywords, except that each client accepts only its own transport and — where the **Async Type** column differs — only its own flavor.
+`AsyncClient` (`binance_public_spot_api/async_client.py`) mirrors `Client` method for method, each endpoint method a coroutine. It takes the same keywords, except that each client accepts only its own transport and — where the **Async Type** column differs — only its own flavor.
 
-`Client` and `AsyncClient` are aliases of `BinanceClient` and `AsyncBinanceClient` — the names tracebacks and `repr()` show; all four import from the root.
+`Client` and `AsyncClient` are aliases of `BinancePublicSpotApiClient` and `AsyncBinancePublicSpotApiClient` — the names tracebacks and `repr()` show; all four import from the root.
 
 `close()` / `aclose()` closes the transport even when you supplied one via `custom_http_client=` / `custom_async_http_client=`, and a closed client cannot be reused.
 
-Every API group is a property on the client (e.g. `client.auto_invest`). Every constructor argument is optional and keyword-only. Sources: `binance/client.py`, `binance/async_client.py`:
+Every API group is a property on the client (e.g. `client.auto_invest`). Every constructor argument is optional and keyword-only. Sources: `binance_public_spot_api/client.py`, `binance_public_spot_api/async_client.py`:
 
 | Keyword | Sync Type | Async Type | Default |
 | --- | --- | --- | --- |
@@ -75,9 +75,9 @@ The types those columns name — where each imports from and, for a credentials 
 
 | Type | Import from | Shape |
 | --- | --- | --- |
-| `Environment` | `binance.server` | `Literal` of the Environments table's names |
-| `HttpClient` | `binance.core` | protocol — `send(request: HttpRequest) -> HttpResponse` · `close()` |
-| `AsyncHttpClient` | `binance.core` | protocol — `async send(request: HttpRequest) -> HttpResponse` · `async aclose()` |
+| `Environment` | `binance_public_spot_api.server` | `Literal` of the Environments table's names |
+| `HttpClient` | `binance_public_spot_api.core` | protocol — `send(request: HttpRequest) -> HttpResponse` · `close()` |
+| `AsyncHttpClient` | `binance_public_spot_api.core` | protocol — `async send(request: HttpRequest) -> HttpResponse` · `async aclose()` |
 
 ---
 
@@ -90,22 +90,22 @@ Every operation is reached in two response modes:
 
 What `.error` holds is fixed per operation. There are two cases:
 
-- **Case A — typed error.** The operation documents at least one error status, so `binance/errors/` declares a union alias over the bodies those statuses map to — `RawError` is always its last arm, for any undocumented status — and `.error` is annotated with that alias. Narrow it with `isinstance`. The operation blocks name the alias and the status each arm maps from.
-- **Case B — raw error.** The operation documents no error status; `.error` is `RawError` (`binance/core/results.py`): `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse`.
+- **Case A — typed error.** The operation documents at least one error status, so `binance_public_spot_api/errors/` declares a union alias over the bodies those statuses map to — `RawError` is always its last arm, for any undocumented status — and `.error` is annotated with that alias. Narrow it with `isinstance`. The operation blocks name the alias and the status each arm maps from.
+- **Case B — raw error.** The operation documents no error status; `.error` is `RawError` (`binance_public_spot_api/core/results.py`): `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse`.
 
-Core runtime types (`binance/core/`) — public members with their **declared types**, verbatim from source:
+Core runtime types (`binance_public_spot_api/core/`) — public members with their **declared types**, verbatim from source:
 
 | Type | Public members | Source |
 | --- | --- | --- |
-| `ApiError` — raised by every parsed call; `.error` is a Case A alias from `binance/errors/` or `RawError` | `error: E` · `status_code: int` · `response: HttpResponse` | `binance/core/exceptions.py` |
-| `ApiResult[T, E]` — returned by every raw call; the `Success[T] \| Failure[E]` union | `payload: T` (on `Success`) · `error: E` (on `Failure`) · `response: HttpResponse` (on both) | `binance/core/results.py` |
-| `RawError` | `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse` | `binance/core/results.py` |
+| `ApiError` — raised by every parsed call; `.error` is a Case A alias from `binance_public_spot_api/errors/` or `RawError` | `error: E` · `status_code: int` · `response: HttpResponse` | `binance_public_spot_api/core/exceptions.py` |
+| `ApiResult[T, E]` — returned by every raw call; the `Success[T] \| Failure[E]` union | `payload: T` (on `Success`) · `error: E` (on `Failure`) · `response: HttpResponse` (on both) | `binance_public_spot_api/core/results.py` |
+| `RawError` | `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse` | `binance_public_spot_api/core/results.py` |
 
 Typed error bodies (the arms of a Case A alias) are ordinary models — no special handling. The operation's **Type sources** table gives the module that declares each one; read field names, declared types and JSON aliases there, as for any other model.
 
 ```python
-from binance.core import ApiError, RawError
-from binance.models import Error
+from binance_public_spot_api.core import ApiError, RawError
+from binance_public_spot_api.models import Error
 
 try:
     response = client.auto_invest.change_plan_status(plan_id, status, timestamp, signature)
@@ -134,7 +134,7 @@ Each links to a sub-page with one block per operation, headed by its full access
 | **Four spellings, one signature** — the same method name and parameters on `Client` and `AsyncClient`, each also reachable through `.with_raw_response`; the async twin is a coroutine to `await`, with the same return types and error case, and where the **Async Type** column differs, pass the type it names | Getting a client |
 | **Parsed raises, raw returns** — `ApiError` versus `ApiResult` | Error-handling model |
 | **Case B error is always `RawError`** — also the last arm of every Case A alias, where a block's **Error arms** bullet ends in it | Error-handling model |
-| **A trailing `request_options`** — keyword-only and optional, for per-call overrides such as a timeout or extra headers; every signature ends with it | here (`binance/core/request_options.py`) |
+| **A trailing `request_options`** — keyword-only and optional, for per-call overrides such as a timeout or extra headers; every signature ends with it | here (`binance_public_spot_api/core/request_options.py`) |
 | **Base URL is the selected environment's** — this SDK's only server, one URL per `environment=`; override it with `base_url="https://…"` | Servers & auth |
 | **Parameter names are literal** — signatures are generated code verbatim, and everything behind the bare `*` must be passed by name | here |
 | **A parameter's wire name is its Python name** — sent as-is on the path, query string, header or body, unless the block's **Params** bullet carries a wire name beside the role | here |
@@ -179,14 +179,14 @@ Sub-pages chunk per `###` block: each block is self-contained given the table ab
 
 ## Models — where they live, how to build them
 
-**Shapes live only in the source.** Every module under `binance/models/` declares one type plus its input companion, and every module under `binance/errors/` one alias plus the mapper that builds it; no two share a name. Take a type's module from the operation's **Type sources** table. When no retrieved chunk names it, the module is the type name in snake_case under the kind's directory below (`AccountProfit` ↔ `account_profit.py`; an error alias drops its `Body` suffix: `HrTickerPriceChangeStatistics24ErrorBody` ↔ `hr_ticker_price_change_statistics24_error.py`). Never grep for a type.
+**Shapes live only in the source.** Every module under `binance_public_spot_api/models/` declares one type plus its input companion, and every module under `binance_public_spot_api/errors/` one alias plus the mapper that builds it; no two share a name. Take a type's module from the operation's **Type sources** table. When no retrieved chunk names it, the module is the type name in snake_case under the kind's directory below (`AccountProfit` ↔ `account_profit.py`; an error alias drops its `Body` suffix: `HrTickerPriceChangeStatistics24ErrorBody` ↔ `hr_ticker_price_change_statistics24_error.py`). Never grep for a type.
 
 | Group | Count | Directory (module = `<type_name>.py`) |
 | --- | --- | --- |
-| Models (`SdkBaseModel` pydantic classes) | 522 | `binance/models/` |
-| Enums (`Enum` over `str`) — Python member names + wire values | 62 | `binance/models/enums/` |
-| Unions (plain) — `TypeAlias` over the arms | 15 | `binance/models/unions/` |
-| Error aliases (one per Case A operation) | 333 | `binance/errors/` |
+| Models (`SdkBaseModel` pydantic classes) | 522 | `binance_public_spot_api/models/` |
+| Enums (`Enum` over `str`) — Python member names + wire values | 62 | `binance_public_spot_api/models/enums/` |
+| Unions (plain) — `TypeAlias` over the arms | 15 | `binance_public_spot_api/models/unions/` |
+| Error aliases (one per Case A operation) | 333 | `binance_public_spot_api/errors/` |
 
 Conventions: a model is a `SdkBaseModel` (pydantic) class; a field whose wire name differs from its Python name carries it as `Field(alias=…)` (`type_` ↔ `"type"`) — read the alias off the field rather than deriving it. An omittable field is annotated `Optional[T]` and defaults to `UNSET`, and one that may also be explicitly null is `OptionalNullable[T]`; both come from `core` and neither is `typing.Optional` — there is no `None` arm unless the spec declared the property nullable, so passing `None` to the first is a type error rather than a value that serializes.
 
@@ -196,13 +196,13 @@ Import paths by content type (`from <package> import <Name>`):
 
 | Contents | Import from |
 | --- | --- |
-| Client (root) | `binance` |
-| Operation controllers | `binance.apis` |
-| Models | `binance.models` |
-| Enums | `binance.models.enums` |
-| Unions | `binance.models.unions`, `binance.models` |
-| Error aliases | `binance.errors` |
-| Core runtime (`ApiError`, `ApiResult`, `RawError`, …) | `binance.core` |
+| Client (root) | `binance_public_spot_api` |
+| Operation controllers | `binance_public_spot_api.apis` |
+| Models | `binance_public_spot_api.models` |
+| Enums | `binance_public_spot_api.models.enums` |
+| Unions | `binance_public_spot_api.models.unions`, `binance_public_spot_api.models` |
+| Error aliases | `binance_public_spot_api.errors` |
+| Core runtime (`ApiError`, `ApiResult`, `RawError`, …) | `binance_public_spot_api.core` |
 
 ---
 
@@ -210,7 +210,14 @@ Import paths by content type (`from <package> import <Name>`):
 
 **API key (header `X-MBX-APIKEY`).** Pass `api_key_auth="<api_key>"`; sent as the `X-MBX-APIKEY` request header.
 
-**Environments.** `environment=` selects the target environment (`binance/server/environment.py`); this SDK's one server (`binance/server/server_config.py`) has a base URL per environment:
+Operation blocks name their scheme in an **Auth** bullet; an operation whose spec declares no scheme carries no such bullet.
+
+- `AND` — every scheme listed must be configured for the call to succeed.
+- `OR` — any one of the schemes listed can be used; the first one you configured is the one sent, in the order listed.
+
+A scheme you did not configure is skipped silently rather than raising, and the request is sent anyway — so an authentication failure can mean no credential was sent rather than a bad one.
+
+**Environments.** `environment=` selects the target environment (`binance_public_spot_api/server/environment.py`); this SDK's one server (`binance_public_spot_api/server/server_config.py`) has a base URL per environment:
 
 | Environment | Base URL | Hosting | Override point |
 | --- | --- | --- | --- |

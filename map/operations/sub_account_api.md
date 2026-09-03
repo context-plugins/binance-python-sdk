@@ -2,13 +2,14 @@
 
 # SubAccountApi — operations
 
-Accessor: `client.sub_account_api` · Source: `binance/apis/sub_account_api.py` · 45 operations
+Accessor: `client.sub_account_api` · Source: `binance_public_spot_api/apis/sub_account_api.py` · 45 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
 ### client.sub_account_api.create_a_virtual_sub_account_for_master_account
 
 - **Route**: `POST /sapi/v1/sub-account/virtualSubAccount`
+- **Auth**: `api_key_auth`
 - **Signature**: `def create_a_virtual_sub_account_for_master_account(sub_account_string: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `sub_account_string`, `timestamp`, `signature`
 - **Params**: `sub_account_string` — query `subAccountString` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -19,13 +20,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountVirtualSubAccountResponse` | `binance/models/sapi_v1_sub_account_virtual_sub_account_response.py` |
-| `CreateAVirtualSubAccountForMasterAccountErrorBody` | `binance/errors/create_a_virtual_sub_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountVirtualSubAccountResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_virtual_sub_account_response.py` |
+| `CreateAVirtualSubAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/create_a_virtual_sub_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.delete_ip_list_for_a_sub_account_api_key_for_master_account
 
 - **Route**: `DELETE /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList`
+- **Auth**: `api_key_auth`
 - **Signature**: `def delete_ip_list_for_a_sub_account_api_key_for_master_account(email: str, sub_account_api_key: str, timestamp: int, signature: str, *, ip_address: str | None = None, third_party_name: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `sub_account_api_key`, `timestamp`, `signature`
 - **Params**: `email` — query · `sub_account_api_key` — query `subAccountApiKey` · `timestamp` — query · `signature` — query · `ip_address` — query `ipAddress` · `third_party_name` — query `thirdPartyName` · `recv_window` — query `recvWindow`
@@ -36,13 +38,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountSubAccountApiIpRestrictionIpListResponse` | `binance/models/sapi_v1_sub_account_sub_account_api_ip_restriction_ip_list_response.py` |
-| `DeleteIpListForASubAccountApiKeyForMasterAccountErrorBody` | `binance/errors/delete_ip_list_for_a_sub_account_api_key_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountSubAccountApiIpRestrictionIpListResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_sub_account_api_ip_restriction_ip_list_response.py` |
+| `DeleteIpListForASubAccountApiKeyForMasterAccountErrorBody` | `binance_public_spot_api/errors/delete_ip_list_for_a_sub_account_api_key_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.deposit_assets_into_the_managed_sub_account_for_investor_master_account
 
 - **Route**: `POST /sapi/v1/managed-subaccount/deposit`
+- **Auth**: `api_key_auth`
 - **Signature**: `def deposit_assets_into_the_managed_sub_account_for_investor_master_account(to_email: str, asset: str, amount: float, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `to_email`, `asset`, `amount`, `timestamp`, `signature`
 - **Params**: `to_email` — query `toEmail` · `asset` — query · `amount` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -53,13 +56,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountDepositResponse` | `binance/models/sapi_v1_managed_subaccount_deposit_response.py` |
-| `DepositAssetsIntoTheManagedSubAccountForInvestorMasterAccountErrorBody` | `binance/errors/deposit_assets_into_the_managed_sub_account_for_investor_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountDepositResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_deposit_response.py` |
+| `DepositAssetsIntoTheManagedSubAccountForInvestorMasterAccountErrorBody` | `binance_public_spot_api/errors/deposit_assets_into_the_managed_sub_account_for_investor_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.detail_on_sub_account_s_futures_account_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/futures/account`
+- **Auth**: `api_key_auth`
 - **Signature**: `def detail_on_sub_account_s_futures_account_for_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -70,13 +74,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountFuturesAccountResponse` | `binance/models/sapi_v1_sub_account_futures_account_response.py` |
-| `DetailOnSubAccountSFuturesAccountForMasterAccountErrorBody` | `binance/errors/detail_on_sub_account_s_futures_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountFuturesAccountResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_futures_account_response.py` |
+| `DetailOnSubAccountSFuturesAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/detail_on_sub_account_s_futures_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.detail_on_sub_account_s_futures_account_v2_for_master_account
 
 - **Route**: `GET /sapi/v2/sub-account/futures/account`
+- **Auth**: `api_key_auth`
 - **Signature**: `def detail_on_sub_account_s_futures_account_v2_for_master_account(email: str, futures_type: int, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `futures_type`, `timestamp`, `signature`
 - **Params**: `email` — query · `futures_type` — query `futuresType` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -87,13 +92,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV2SubAccountFuturesAccountResponse` | `binance/models/unions/sapi_v2_sub_account_futures_account_response.py` |
-| `DetailOnSubAccountSFuturesAccountV2ForMasterAccountErrorBody` | `binance/errors/detail_on_sub_account_s_futures_account_v2_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV2SubAccountFuturesAccountResponse` | `binance_public_spot_api/models/unions/sapi_v2_sub_account_futures_account_response.py` |
+| `DetailOnSubAccountSFuturesAccountV2ForMasterAccountErrorBody` | `binance_public_spot_api/errors/detail_on_sub_account_s_futures_account_v2_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.detail_on_sub_account_s_margin_account_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/margin/account`
+- **Auth**: `api_key_auth`
 - **Signature**: `def detail_on_sub_account_s_margin_account_for_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -104,13 +110,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountMarginAccountResponse` | `binance/models/sapi_v1_sub_account_margin_account_response.py` |
-| `DetailOnSubAccountSMarginAccountForMasterAccountErrorBody` | `binance/errors/detail_on_sub_account_s_margin_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountMarginAccountResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_margin_account_response.py` |
+| `DetailOnSubAccountSMarginAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/detail_on_sub_account_s_margin_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.enable_futures_for_sub_account_for_master_account
 
 - **Route**: `POST /sapi/v1/sub-account/futures/enable`
+- **Auth**: `api_key_auth`
 - **Signature**: `def enable_futures_for_sub_account_for_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -121,13 +128,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountFuturesEnableResponse` | `binance/models/sapi_v1_sub_account_futures_enable_response.py` |
-| `EnableFuturesForSubAccountForMasterAccountErrorBody` | `binance/errors/enable_futures_for_sub_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountFuturesEnableResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_futures_enable_response.py` |
+| `EnableFuturesForSubAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/enable_futures_for_sub_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.enable_leverage_token_for_sub_account_for_master_account
 
 - **Route**: `POST /sapi/v1/sub-account/blvt/enable`
+- **Auth**: `api_key_auth`
 - **Signature**: `def enable_leverage_token_for_sub_account_for_master_account(email: str, enable_blvt: bool, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `enable_blvt`, `timestamp`, `signature`
 - **Params**: `email` — query · `enable_blvt` — query `enableBlvt` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -138,13 +146,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountBlvtEnableResponse` | `binance/models/sapi_v1_sub_account_blvt_enable_response.py` |
-| `EnableLeverageTokenForSubAccountForMasterAccountErrorBody` | `binance/errors/enable_leverage_token_for_sub_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountBlvtEnableResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_blvt_enable_response.py` |
+| `EnableLeverageTokenForSubAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/enable_leverage_token_for_sub_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.enable_margin_for_sub_account_for_master_account
 
 - **Route**: `POST /sapi/v1/sub-account/margin/enable`
+- **Auth**: `api_key_auth`
 - **Signature**: `def enable_margin_for_sub_account_for_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -155,13 +164,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountMarginEnableResponse` | `binance/models/sapi_v1_sub_account_margin_enable_response.py` |
-| `EnableMarginForSubAccountForMasterAccountErrorBody` | `binance/errors/enable_margin_for_sub_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountMarginEnableResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_margin_enable_response.py` |
+| `EnableMarginForSubAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/enable_margin_for_sub_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.enable_options_for_sub_account_for_master_account_user_data
 
 - **Route**: `POST /sapi/v1/sub-account/eoptions/enable`
+- **Auth**: `api_key_auth`
 - **Signature**: `def enable_options_for_sub_account_for_master_account_user_data(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -172,13 +182,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountEoptionsEnableResponse` | `binance/models/sapi_v1_sub_account_eoptions_enable_response.py` |
-| `EnableOptionsForSubAccountForMasterAccountUserDataErrorBody` | `binance/errors/enable_options_for_sub_account_for_master_account_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountEoptionsEnableResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_eoptions_enable_response.py` |
+| `EnableOptionsForSubAccountForMasterAccountUserDataErrorBody` | `binance_public_spot_api/errors/enable_options_for_sub_account_for_master_account_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.futures_position_risk_of_sub_account_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/futures/positionRisk`
+- **Auth**: `api_key_auth`
 - **Signature**: `def futures_position_risk_of_sub_account_for_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -189,13 +200,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountFuturesPositionRiskResponse` | `binance/models/sapi_v1_sub_account_futures_position_risk_response.py` |
-| `FuturesPositionRiskOfSubAccountForMasterAccountErrorBody` | `binance/errors/futures_position_risk_of_sub_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountFuturesPositionRiskResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_futures_position_risk_response.py` |
+| `FuturesPositionRiskOfSubAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/futures_position_risk_of_sub_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.futures_position_risk_of_sub_account_v2_for_master_account
 
 - **Route**: `GET /sapi/v2/sub-account/futures/positionRisk`
+- **Auth**: `api_key_auth`
 - **Signature**: `def futures_position_risk_of_sub_account_v2_for_master_account(email: str, futures_type: int, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `futures_type`, `timestamp`, `signature`
 - **Params**: `email` — query · `futures_type` — query `futuresType` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -206,13 +218,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV2SubAccountFuturesPositionRiskResponse` | `binance/models/unions/sapi_v2_sub_account_futures_position_risk_response.py` |
-| `FuturesPositionRiskOfSubAccountV2ForMasterAccountErrorBody` | `binance/errors/futures_position_risk_of_sub_account_v2_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV2SubAccountFuturesPositionRiskResponse` | `binance_public_spot_api/models/unions/sapi_v2_sub_account_futures_position_risk_response.py` |
+| `FuturesPositionRiskOfSubAccountV2ForMasterAccountErrorBody` | `binance_public_spot_api/errors/futures_position_risk_of_sub_account_v2_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.get_ip_restriction_for_a_sub_account_api_key_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/subAccountApi/ipRestriction`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_ip_restriction_for_a_sub_account_api_key_for_master_account(email: str, sub_account_api_key: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `sub_account_api_key`, `timestamp`, `signature`
 - **Params**: `email` — query · `sub_account_api_key` — query `subAccountApiKey` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -223,13 +236,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountSubAccountApiIpRestrictionResponse` | `binance/models/sapi_v1_sub_account_sub_account_api_ip_restriction_response.py` |
-| `GetIpRestrictionForASubAccountApiKeyForMasterAccountErrorBody` | `binance/errors/get_ip_restriction_for_a_sub_account_api_key_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountSubAccountApiIpRestrictionResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_sub_account_api_ip_restriction_response.py` |
+| `GetIpRestrictionForASubAccountApiKeyForMasterAccountErrorBody` | `binance_public_spot_api/errors/get_ip_restriction_for_a_sub_account_api_key_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.get_managed_sub_account_deposit_address_for_investor_master_account
 
 - **Route**: `GET /sapi/v1/managed-subaccount/deposit/address`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_managed_sub_account_deposit_address_for_investor_master_account(email: str, coin: str, timestamp: int, signature: str, *, network: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `coin`, `timestamp`, `signature`
 - **Params**: `email` — query · `coin` — query · `timestamp` — query · `signature` — query · `network` — query · `recv_window` — query `recvWindow`
@@ -240,13 +254,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountDepositAddressResponse` | `binance/models/sapi_v1_managed_subaccount_deposit_address_response.py` |
-| `GetManagedSubAccountDepositAddressForInvestorMasterAccountErrorBody` | `binance/errors/get_managed_sub_account_deposit_address_for_investor_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountDepositAddressResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_deposit_address_response.py` |
+| `GetManagedSubAccountDepositAddressForInvestorMasterAccountErrorBody` | `binance_public_spot_api/errors/get_managed_sub_account_deposit_address_for_investor_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.managed_sub_account_asset_details_for_investor_master_account
 
 - **Route**: `GET /sapi/v1/managed-subaccount/asset`
+- **Auth**: `api_key_auth`
 - **Signature**: `def managed_sub_account_asset_details_for_investor_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -257,9 +272,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountAssetResponse` | `binance/models/sapi_v1_managed_subaccount_asset_response.py` |
-| `ManagedSubAccountAssetDetailsForInvestorMasterAccountErrorBody` | `binance/errors/managed_sub_account_asset_details_for_investor_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountAssetResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_asset_response.py` |
+| `ManagedSubAccountAssetDetailsForInvestorMasterAccountErrorBody` | `binance_public_spot_api/errors/managed_sub_account_asset_details_for_investor_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.managed_sub_account_snapshot_for_investor_master_account
 
@@ -274,13 +289,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountAccountSnapshotResponse` | `binance/models/sapi_v1_managed_subaccount_account_snapshot_response.py` |
-| `ManagedSubAccountSnapshotForInvestorMasterAccountErrorBody` | `binance/errors/managed_sub_account_snapshot_for_investor_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountAccountSnapshotResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_account_snapshot_response.py` |
+| `ManagedSubAccountSnapshotForInvestorMasterAccountErrorBody` | `binance_public_spot_api/errors/managed_sub_account_snapshot_for_investor_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.margin_transfer_for_sub_account_for_master_account
 
 - **Route**: `POST /sapi/v1/sub-account/margin/transfer`
+- **Auth**: `api_key_auth`
 - **Signature**: `def margin_transfer_for_sub_account_for_master_account(email: str, asset: str, amount: float, type_: int, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `asset`, `amount`, `type_`, `timestamp`, `signature`
 - **Params**: `email` — query · `asset` — query · `amount` — query · `type_` — query `type` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -291,13 +307,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountMarginTransferResponse` | `binance/models/sapi_v1_sub_account_margin_transfer_response.py` |
-| `MarginTransferForSubAccountForMasterAccountErrorBody` | `binance/errors/margin_transfer_for_sub_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountMarginTransferResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_margin_transfer_response.py` |
+| `MarginTransferForSubAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/margin_transfer_for_sub_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_managed_sub_account_transfer_log_for_investor_master_account
 
 - **Route**: `GET /sapi/v1/managed-subaccount/queryTransLogForInvestor`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_managed_sub_account_transfer_log_for_investor_master_account(email: str, timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, page: int | None = None, limit: int | None = None, transfers: str | None = None, transfer_function_account_type: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `page` — query · `limit` — query · `transfers` — query · `transfer_function_account_type` — query `transferFunctionAccountType` · `recv_window` — query `recvWindow`
@@ -308,13 +325,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountQueryTransLogForInvestorResponse` | `binance/models/sapi_v1_managed_subaccount_query_trans_log_for_investor_response.py` |
-| `QueryManagedSubAccountTransferLogForInvestorMasterAccountErrorBody` | `binance/errors/query_managed_sub_account_transfer_log_for_investor_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountQueryTransLogForInvestorResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_query_trans_log_for_investor_response.py` |
+| `QueryManagedSubAccountTransferLogForInvestorMasterAccountErrorBody` | `binance_public_spot_api/errors/query_managed_sub_account_transfer_log_for_investor_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_managed_sub_account_transfer_log_for_trading_team_master_account
 
 - **Route**: `GET /sapi/v1/managed-subaccount/queryTransLogForTradeParent`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_managed_sub_account_transfer_log_for_trading_team_master_account(email: str, timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, page: int | None = None, limit: int | None = None, transfers: str | None = None, transfer_function_account_type: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `page` — query · `limit` — query · `transfers` — query · `transfer_function_account_type` — query `transferFunctionAccountType` · `recv_window` — query `recvWindow`
@@ -325,13 +343,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountQueryTransLogForTradeParentResponse` | `binance/models/sapi_v1_managed_subaccount_query_trans_log_for_trade_parent_response.py` |
-| `QueryManagedSubAccountTransferLogForTradingTeamMasterAccountErrorBody` | `binance/errors/query_managed_sub_account_transfer_log_for_trading_team_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountQueryTransLogForTradeParentResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_query_trans_log_for_trade_parent_response.py` |
+| `QueryManagedSubAccountTransferLogForTradingTeamMasterAccountErrorBody` | `binance_public_spot_api/errors/query_managed_sub_account_transfer_log_for_trading_team_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_managed_sub_account_transfer_log_for_trading_team_sub_account_user_data
 
 - **Route**: `GET /sapi/v1/managed-subaccount/query-trans-log`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_managed_sub_account_transfer_log_for_trading_team_sub_account_user_data(transfers: TransfersOrStr, transfer_function_account_type: TransferFunctionAccountTypeOrStr, timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, page: int | None = None, limit: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `transfers`, `transfer_function_account_type`, `timestamp`, `signature`
 - **Params**: `transfers` — query · `transfer_function_account_type` — query `transferFunctionAccountType` · `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `page` — query · `limit` — query · `recv_window` — query `recvWindow`
@@ -342,15 +361,16 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TransfersOrStr` | `binance/models/enums/transfers.py` |
-| `TransferFunctionAccountTypeOrStr` | `binance/models/enums/transfer_function_account_type.py` |
-| `SapiV1ManagedSubaccountQueryTransLogResponse` | `binance/models/sapi_v1_managed_subaccount_query_trans_log_response.py` |
-| `QueryManagedSubAccountTransferLogForTradingTeamSubAccountUserDataErrorBody` | `binance/errors/query_managed_sub_account_transfer_log_for_trading_team_sub_account_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `TransfersOrStr` | `binance_public_spot_api/models/enums/transfers.py` |
+| `TransferFunctionAccountTypeOrStr` | `binance_public_spot_api/models/enums/transfer_function_account_type.py` |
+| `SapiV1ManagedSubaccountQueryTransLogResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_query_trans_log_response.py` |
+| `QueryManagedSubAccountTransferLogForTradingTeamSubAccountUserDataErrorBody` | `binance_public_spot_api/errors/query_managed_sub_account_transfer_log_for_trading_team_sub_account_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_managed_sub_account_futures_asset_details_for_investor_master_account
 
 - **Route**: `GET /sapi/v1/managed-subaccount/fetch-future-asset`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_managed_sub_account_futures_asset_details_for_investor_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -361,13 +381,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountFetchFutureAssetResponse` | `binance/models/sapi_v1_managed_subaccount_fetch_future_asset_response.py` |
-| `QueryManagedSubAccountFuturesAssetDetailsForInvestorMasterAccountErrorBody` | `binance/errors/query_managed_sub_account_futures_asset_details_for_investor_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountFetchFutureAssetResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_fetch_future_asset_response.py` |
+| `QueryManagedSubAccountFuturesAssetDetailsForInvestorMasterAccountErrorBody` | `binance_public_spot_api/errors/query_managed_sub_account_futures_asset_details_for_investor_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_managed_sub_account_list_for_investor
 
 - **Route**: `GET /sapi/v1/managed-subaccount/info`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_managed_sub_account_list_for_investor(email: str, timestamp: int, signature: str, *, page: int | None = None, limit: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `page` — query · `limit` — query · `recv_window` — query `recvWindow`
@@ -378,13 +399,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountInfoResponse` | `binance/models/sapi_v1_managed_subaccount_info_response.py` |
-| `QueryManagedSubAccountListForInvestorErrorBody` | `binance/errors/query_managed_sub_account_list_for_investor_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountInfoResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_info_response.py` |
+| `QueryManagedSubAccountListForInvestorErrorBody` | `binance_public_spot_api/errors/query_managed_sub_account_list_for_investor_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_managed_sub_account_margin_asset_details_for_investor_master_account
 
 - **Route**: `GET /sapi/v1/managed-subaccount/marginAsset`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_managed_sub_account_margin_asset_details_for_investor_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -395,13 +417,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountMarginAssetResponse` | `binance/models/sapi_v1_managed_subaccount_margin_asset_response.py` |
-| `QueryManagedSubAccountMarginAssetDetailsForInvestorMasterAccountErrorBody` | `binance/errors/query_managed_sub_account_margin_asset_details_for_investor_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountMarginAssetResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_margin_asset_response.py` |
+| `QueryManagedSubAccountMarginAssetDetailsForInvestorMasterAccountErrorBody` | `binance_public_spot_api/errors/query_managed_sub_account_margin_asset_details_for_investor_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_sub_account_assets_for_master_account
 
 - **Route**: `GET /sapi/v4/sub-account/assets`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_sub_account_assets_for_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -412,13 +435,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV4SubAccountAssetsResponse` | `binance/models/sapi_v4_sub_account_assets_response.py` |
-| `QuerySubAccountAssetsForMasterAccountErrorBody` | `binance/errors/query_sub_account_assets_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV4SubAccountAssetsResponse` | `binance_public_spot_api/models/sapi_v4_sub_account_assets_response.py` |
+| `QuerySubAccountAssetsForMasterAccountErrorBody` | `binance_public_spot_api/errors/query_sub_account_assets_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_sub_account_list_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/list`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_sub_account_list_for_master_account(timestamp: int, signature: str, *, email: str | None = None, is_freeze: IsFreezeOrStr | None = None, page: int | None = None, limit: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `email` — query · `is_freeze` — query `isFreeze` · `page` — query · `limit` — query · `recv_window` — query `recvWindow`
@@ -429,14 +453,15 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `IsFreezeOrStr` | `binance/models/enums/is_freeze.py` |
-| `SapiV1SubAccountListResponse` | `binance/models/sapi_v1_sub_account_list_response.py` |
-| `QuerySubAccountListForMasterAccountErrorBody` | `binance/errors/query_sub_account_list_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `IsFreezeOrStr` | `binance_public_spot_api/models/enums/is_freeze.py` |
+| `SapiV1SubAccountListResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_list_response.py` |
+| `QuerySubAccountListForMasterAccountErrorBody` | `binance_public_spot_api/errors/query_sub_account_list_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.query_sub_account_transaction_statistics_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/transaction-statistics`
+- **Auth**: `api_key_auth`
 - **Signature**: `def query_sub_account_transaction_statistics_for_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -447,13 +472,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountTransactionStatisticsResponse` | `binance/models/sapi_v1_sub_account_transaction_statistics_response.py` |
-| `QuerySubAccountTransactionStatisticsForMasterAccountErrorBody` | `binance/errors/query_sub_account_transaction_statistics_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountTransactionStatisticsResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_transaction_statistics_response.py` |
+| `QuerySubAccountTransactionStatisticsForMasterAccountErrorBody` | `binance_public_spot_api/errors/query_sub_account_transaction_statistics_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_assets_for_master_account
 
 - **Route**: `GET /sapi/v3/sub-account/assets`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_assets_for_master_account(email: str, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -464,13 +490,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV3SubAccountAssetsResponse` | `binance/models/sapi_v3_sub_account_assets_response.py` |
-| `SubAccountAssetsForMasterAccountErrorBody` | `binance/errors/sub_account_assets_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV3SubAccountAssetsResponse` | `binance_public_spot_api/models/sapi_v3_sub_account_assets_response.py` |
+| `SubAccountAssetsForMasterAccountErrorBody` | `binance_public_spot_api/errors/sub_account_assets_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_deposit_history_for_master_account
 
 - **Route**: `GET /sapi/v1/capital/deposit/subHisrec`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_deposit_history_for_master_account(email: str, timestamp: int, signature: str, *, coin: str | None = None, status: int | None = None, start_time: int | None = None, end_time: int | None = None, limit: int | None = None, offset: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `timestamp`, `signature`
 - **Params**: `email` — query · `timestamp` — query · `signature` — query · `coin` — query · `status` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `limit` — query · `offset` — query · `recv_window` — query `recvWindow`
@@ -481,13 +508,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1CapitalDepositSubHisrecResponse` | `binance/models/sapi_v1_capital_deposit_sub_hisrec_response.py` |
-| `SubAccountDepositHistoryForMasterAccountErrorBody` | `binance/errors/sub_account_deposit_history_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1CapitalDepositSubHisrecResponse` | `binance_public_spot_api/models/sapi_v1_capital_deposit_sub_hisrec_response.py` |
+| `SubAccountDepositHistoryForMasterAccountErrorBody` | `binance_public_spot_api/errors/sub_account_deposit_history_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_futures_asset_transfer_for_master_account
 
 - **Route**: `POST /sapi/v1/sub-account/futures/internalTransfer`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_futures_asset_transfer_for_master_account(from_email: str, to_email: str, futures_type: int, asset: str, amount: float, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `from_email`, `to_email`, `futures_type`, `asset`, `amount`, `timestamp`, `signature`
 - **Params**: `from_email` — query `fromEmail` · `to_email` — query `toEmail` · `futures_type` — query `futuresType` · `asset` — query · `amount` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -498,13 +526,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountFuturesInternalTransferResponse1` | `binance/models/sapi_v1_sub_account_futures_internal_transfer_response1.py` |
-| `SubAccountFuturesAssetTransferForMasterAccountErrorBody` | `binance/errors/sub_account_futures_asset_transfer_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountFuturesInternalTransferResponse1` | `binance_public_spot_api/models/sapi_v1_sub_account_futures_internal_transfer_response1.py` |
+| `SubAccountFuturesAssetTransferForMasterAccountErrorBody` | `binance_public_spot_api/errors/sub_account_futures_asset_transfer_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_futures_asset_transfer_history_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/futures/internalTransfer`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_futures_asset_transfer_history_for_master_account(email: str, futures_type: int, timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, page: int | None = None, limit: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `futures_type`, `timestamp`, `signature`
 - **Params**: `email` — query · `futures_type` — query `futuresType` · `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `page` — query · `limit` — query · `recv_window` — query `recvWindow`
@@ -515,13 +544,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountFuturesInternalTransferResponse` | `binance/models/sapi_v1_sub_account_futures_internal_transfer_response.py` |
-| `SubAccountFuturesAssetTransferHistoryForMasterAccountErrorBody` | `binance/errors/sub_account_futures_asset_transfer_history_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountFuturesInternalTransferResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_futures_internal_transfer_response.py` |
+| `SubAccountFuturesAssetTransferHistoryForMasterAccountErrorBody` | `binance_public_spot_api/errors/sub_account_futures_asset_transfer_history_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_spot_asset_transfer_history_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/sub/transfer/history`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_spot_asset_transfer_history_for_master_account(timestamp: int, signature: str, *, from_email: str | None = None, to_email: str | None = None, start_time: int | None = None, end_time: int | None = None, page: int | None = None, limit: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `from_email` — query `fromEmail` · `to_email` — query `toEmail` · `start_time` — query `startTime` · `end_time` — query `endTime` · `page` — query · `limit` — query · `recv_window` — query `recvWindow`
@@ -532,13 +562,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountSubTransferHistoryResponse` | `binance/models/sapi_v1_sub_account_sub_transfer_history_response.py` |
-| `SubAccountSpotAssetTransferHistoryForMasterAccountErrorBody` | `binance/errors/sub_account_spot_asset_transfer_history_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountSubTransferHistoryResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_sub_transfer_history_response.py` |
+| `SubAccountSpotAssetTransferHistoryForMasterAccountErrorBody` | `binance_public_spot_api/errors/sub_account_spot_asset_transfer_history_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_spot_assets_summary_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/spotSummary`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_spot_assets_summary_for_master_account(timestamp: int, signature: str, *, email: str | None = None, page: int | None = None, size: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `email` — query · `page` — query · `size` — query · `recv_window` — query `recvWindow`
@@ -549,13 +580,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountSpotSummaryResponse` | `binance/models/sapi_v1_sub_account_spot_summary_response.py` |
-| `SubAccountSpotAssetsSummaryForMasterAccountErrorBody` | `binance/errors/sub_account_spot_assets_summary_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountSpotSummaryResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_spot_summary_response.py` |
+| `SubAccountSpotAssetsSummaryForMasterAccountErrorBody` | `binance_public_spot_api/errors/sub_account_spot_assets_summary_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_spot_assets_summary_for_master_account_2
 
 - **Route**: `GET /sapi/v1/capital/deposit/subAddress`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_spot_assets_summary_for_master_account_2(email: str, coin: str, timestamp: int, signature: str, *, network: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `coin`, `timestamp`, `signature`
 - **Params**: `email` — query · `coin` — query · `timestamp` — query · `signature` — query · `network` — query · `recv_window` — query `recvWindow`
@@ -566,13 +598,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1CapitalDepositSubAddressResponse` | `binance/models/sapi_v1_capital_deposit_sub_address_response.py` |
-| `SubAccountSpotAssetsSummaryForMasterAccount2ErrorBody` | `binance/errors/sub_account_spot_assets_summary_for_master_account2_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1CapitalDepositSubAddressResponse` | `binance_public_spot_api/models/sapi_v1_capital_deposit_sub_address_response.py` |
+| `SubAccountSpotAssetsSummaryForMasterAccount2ErrorBody` | `binance_public_spot_api/errors/sub_account_spot_assets_summary_for_master_account2_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_transfer_history_for_sub_account
 
 - **Route**: `GET /sapi/v1/sub-account/transfer/subUserHistory`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_transfer_history_for_sub_account(timestamp: int, signature: str, *, asset: str | None = None, type_: int | None = None, start_time: int | None = None, end_time: int | None = None, limit: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `asset` — query · `type_` — query `type` · `start_time` — query `startTime` · `end_time` — query `endTime` · `limit` — query · `recv_window` — query `recvWindow`
@@ -583,13 +616,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountTransferSubUserHistoryResponse` | `binance/models/sapi_v1_sub_account_transfer_sub_user_history_response.py` |
-| `SubAccountTransferHistoryForSubAccountErrorBody` | `binance/errors/sub_account_transfer_history_for_sub_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountTransferSubUserHistoryResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_transfer_sub_user_history_response.py` |
+| `SubAccountTransferHistoryForSubAccountErrorBody` | `binance_public_spot_api/errors/sub_account_transfer_history_for_sub_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.sub_account_s_status_on_margin_futures_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/status`
+- **Auth**: `api_key_auth`
 - **Signature**: `def sub_account_s_status_on_margin_futures_for_master_account(timestamp: int, signature: str, *, email: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `email` — query · `recv_window` — query `recvWindow`
@@ -600,13 +634,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountStatusResponse` | `binance/models/sapi_v1_sub_account_status_response.py` |
-| `SubAccountSStatusOnMarginFuturesForMasterAccountErrorBody` | `binance/errors/sub_account_s_status_on_margin_futures_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountStatusResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_status_response.py` |
+| `SubAccountSStatusOnMarginFuturesForMasterAccountErrorBody` | `binance_public_spot_api/errors/sub_account_s_status_on_margin_futures_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.summary_of_sub_account_s_futures_account_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/futures/accountSummary`
+- **Auth**: `api_key_auth`
 - **Signature**: `def summary_of_sub_account_s_futures_account_for_master_account(timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -617,13 +652,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountFuturesAccountSummaryResponse` | `binance/models/sapi_v1_sub_account_futures_account_summary_response.py` |
-| `SummaryOfSubAccountSFuturesAccountForMasterAccountErrorBody` | `binance/errors/summary_of_sub_account_s_futures_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountFuturesAccountSummaryResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_futures_account_summary_response.py` |
+| `SummaryOfSubAccountSFuturesAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/summary_of_sub_account_s_futures_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.summary_of_sub_account_s_futures_account_v2_for_master_account
 
 - **Route**: `GET /sapi/v2/sub-account/futures/accountSummary`
+- **Auth**: `api_key_auth`
 - **Signature**: `def summary_of_sub_account_s_futures_account_v2_for_master_account(futures_type: int, timestamp: int, signature: str, *, page: int | None = None, limit: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `futures_type`, `timestamp`, `signature`
 - **Params**: `futures_type` — query `futuresType` · `timestamp` — query · `signature` — query · `page` — query · `limit` — query · `recv_window` — query `recvWindow`
@@ -634,13 +670,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV2SubAccountFuturesAccountSummaryResponse` | `binance/models/unions/sapi_v2_sub_account_futures_account_summary_response.py` |
-| `SummaryOfSubAccountSFuturesAccountV2ForMasterAccountErrorBody` | `binance/errors/summary_of_sub_account_s_futures_account_v2_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV2SubAccountFuturesAccountSummaryResponse` | `binance_public_spot_api/models/unions/sapi_v2_sub_account_futures_account_summary_response.py` |
+| `SummaryOfSubAccountSFuturesAccountV2ForMasterAccountErrorBody` | `binance_public_spot_api/errors/summary_of_sub_account_s_futures_account_v2_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.summary_of_sub_account_s_margin_account_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/margin/accountSummary`
+- **Auth**: `api_key_auth`
 - **Signature**: `def summary_of_sub_account_s_margin_account_for_master_account(timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -651,13 +688,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountMarginAccountSummaryResponse` | `binance/models/sapi_v1_sub_account_margin_account_summary_response.py` |
-| `SummaryOfSubAccountSMarginAccountForMasterAccountErrorBody` | `binance/errors/summary_of_sub_account_s_margin_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountMarginAccountSummaryResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_margin_account_summary_response.py` |
+| `SummaryOfSubAccountSMarginAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/summary_of_sub_account_s_margin_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.transfer_for_sub_account_for_master_account
 
 - **Route**: `POST /sapi/v1/sub-account/futures/transfer`
+- **Auth**: `api_key_auth`
 - **Signature**: `def transfer_for_sub_account_for_master_account(email: str, asset: str, amount: float, type_: int, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `asset`, `amount`, `type_`, `timestamp`, `signature`
 - **Params**: `email` — query · `asset` — query · `amount` — query · `type_` — query `type` · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -668,13 +706,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountFuturesTransferResponse` | `binance/models/sapi_v1_sub_account_futures_transfer_response.py` |
-| `TransferForSubAccountForMasterAccountErrorBody` | `binance/errors/transfer_for_sub_account_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountFuturesTransferResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_futures_transfer_response.py` |
+| `TransferForSubAccountForMasterAccountErrorBody` | `binance_public_spot_api/errors/transfer_for_sub_account_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.transfer_to_master_for_sub_account
 
 - **Route**: `POST /sapi/v1/sub-account/transfer/subToMaster`
+- **Auth**: `api_key_auth`
 - **Signature**: `def transfer_to_master_for_sub_account(asset: str, amount: float, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `asset`, `amount`, `timestamp`, `signature`
 - **Params**: `asset` — query · `amount` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -685,13 +724,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountTransferSubToMasterResponse` | `binance/models/sapi_v1_sub_account_transfer_sub_to_master_response.py` |
-| `TransferToMasterForSubAccountErrorBody` | `binance/errors/transfer_to_master_for_sub_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountTransferSubToMasterResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_transfer_sub_to_master_response.py` |
+| `TransferToMasterForSubAccountErrorBody` | `binance_public_spot_api/errors/transfer_to_master_for_sub_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.transfer_to_sub_account_of_same_master_for_sub_account
 
 - **Route**: `POST /sapi/v1/sub-account/transfer/subToSub`
+- **Auth**: `api_key_auth`
 - **Signature**: `def transfer_to_sub_account_of_same_master_for_sub_account(to_email: str, asset: str, amount: float, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `to_email`, `asset`, `amount`, `timestamp`, `signature`
 - **Params**: `to_email` — query `toEmail` · `asset` — query · `amount` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -702,13 +742,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountTransferSubToSubResponse` | `binance/models/sapi_v1_sub_account_transfer_sub_to_sub_response.py` |
-| `TransferToSubAccountOfSameMasterForSubAccountErrorBody` | `binance/errors/transfer_to_sub_account_of_same_master_for_sub_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountTransferSubToSubResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_transfer_sub_to_sub_response.py` |
+| `TransferToSubAccountOfSameMasterForSubAccountErrorBody` | `binance_public_spot_api/errors/transfer_to_sub_account_of_same_master_for_sub_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.universal_transfer_for_master_account
 
 - **Route**: `POST /sapi/v1/sub-account/universalTransfer`
+- **Auth**: `api_key_auth`
 - **Signature**: `def universal_transfer_for_master_account(from_account_type: FromAccountTypeOrStr, to_account_type: ToAccountTypeOrStr, asset: str, amount: float, timestamp: int, signature: str, *, from_email: str | None = None, to_email: str | None = None, client_tran_id: str | None = None, symbol: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `from_account_type`, `to_account_type`, `asset`, `amount`, `timestamp`, `signature`
 - **Params**: `from_account_type` — query `fromAccountType` · `to_account_type` — query `toAccountType` · `asset` — query · `amount` — query · `timestamp` — query · `signature` — query · `from_email` — query `fromEmail` · `to_email` — query `toEmail` · `client_tran_id` — query `clientTranId` · `symbol` — query · `recv_window` — query `recvWindow`
@@ -719,15 +760,16 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `FromAccountTypeOrStr` | `binance/models/enums/from_account_type.py` |
-| `ToAccountTypeOrStr` | `binance/models/enums/to_account_type.py` |
-| `SapiV1SubAccountUniversalTransferResponse1` | `binance/models/sapi_v1_sub_account_universal_transfer_response1.py` |
-| `UniversalTransferForMasterAccountErrorBody` | `binance/errors/universal_transfer_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `FromAccountTypeOrStr` | `binance_public_spot_api/models/enums/from_account_type.py` |
+| `ToAccountTypeOrStr` | `binance_public_spot_api/models/enums/to_account_type.py` |
+| `SapiV1SubAccountUniversalTransferResponse1` | `binance_public_spot_api/models/sapi_v1_sub_account_universal_transfer_response1.py` |
+| `UniversalTransferForMasterAccountErrorBody` | `binance_public_spot_api/errors/universal_transfer_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.universal_transfer_history_for_master_account
 
 - **Route**: `GET /sapi/v1/sub-account/universalTransfer`
+- **Auth**: `api_key_auth`
 - **Signature**: `def universal_transfer_history_for_master_account(timestamp: int, signature: str, *, from_email: str | None = None, to_email: str | None = None, client_tran_id: str | None = None, start_time: int | None = None, end_time: int | None = None, page: int | None = None, limit: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `from_email` — query `fromEmail` · `to_email` — query `toEmail` · `client_tran_id` — query `clientTranId` · `start_time` — query `startTime` · `end_time` — query `endTime` · `page` — query · `limit` — query · `recv_window` — query `recvWindow`
@@ -738,13 +780,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1SubAccountUniversalTransferResponse` | `binance/models/sapi_v1_sub_account_universal_transfer_response.py` |
-| `UniversalTransferHistoryForMasterAccountErrorBody` | `binance/errors/universal_transfer_history_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1SubAccountUniversalTransferResponse` | `binance_public_spot_api/models/sapi_v1_sub_account_universal_transfer_response.py` |
+| `UniversalTransferHistoryForMasterAccountErrorBody` | `binance_public_spot_api/errors/universal_transfer_history_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.update_ip_restriction_for_sub_account_api_key_for_master_account
 
 - **Route**: `POST /sapi/v2/sub-account/subAccountApi/ipRestriction`
+- **Auth**: `api_key_auth`
 - **Signature**: `def update_ip_restriction_for_sub_account_api_key_for_master_account(email: str, sub_account_api_key: str, status: str, timestamp: int, signature: str, *, third_party_name: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `email`, `sub_account_api_key`, `status`, `timestamp`, `signature`
 - **Params**: `email` — query · `sub_account_api_key` — query `subAccountApiKey` · `status` — query · `timestamp` — query · `signature` — query · `third_party_name` — query `thirdPartyName` · `recv_window` — query `recvWindow`
@@ -755,13 +798,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV2SubAccountSubAccountApiIpRestrictionResponse` | `binance/models/sapi_v2_sub_account_sub_account_api_ip_restriction_response.py` |
-| `UpdateIpRestrictionForSubAccountApiKeyForMasterAccountErrorBody` | `binance/errors/update_ip_restriction_for_sub_account_api_key_for_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV2SubAccountSubAccountApiIpRestrictionResponse` | `binance_public_spot_api/models/sapi_v2_sub_account_sub_account_api_ip_restriction_response.py` |
+| `UpdateIpRestrictionForSubAccountApiKeyForMasterAccountErrorBody` | `binance_public_spot_api/errors/update_ip_restriction_for_sub_account_api_key_for_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.sub_account_api.withdrawl_assets_from_the_managed_sub_account_for_investor_master_account
 
 - **Route**: `POST /sapi/v1/managed-subaccount/withdraw`
+- **Auth**: `api_key_auth`
 - **Signature**: `def withdrawl_assets_from_the_managed_sub_account_for_investor_master_account(from_email: str, asset: str, amount: float, timestamp: int, signature: str, *, transfer_date: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `from_email`, `asset`, `amount`, `timestamp`, `signature`
 - **Params**: `from_email` — query `fromEmail` · `asset` — query · `amount` — query · `timestamp` — query · `signature` — query · `transfer_date` — query `transferDate` · `recv_window` — query `recvWindow`
@@ -772,7 +816,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1ManagedSubaccountWithdrawResponse` | `binance/models/sapi_v1_managed_subaccount_withdraw_response.py` |
-| `WithdrawlAssetsFromTheManagedSubAccountForInvestorMasterAccountErrorBody` | `binance/errors/withdrawl_assets_from_the_managed_sub_account_for_investor_master_account_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1ManagedSubaccountWithdrawResponse` | `binance_public_spot_api/models/sapi_v1_managed_subaccount_withdraw_response.py` |
+| `WithdrawlAssetsFromTheManagedSubAccountForInvestorMasterAccountErrorBody` | `binance_public_spot_api/errors/withdrawl_assets_from_the_managed_sub_account_for_investor_master_account_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 

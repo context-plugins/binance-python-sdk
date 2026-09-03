@@ -1,5 +1,5 @@
 [project]
-name = "binance"
+name = "binance-public-spot-api"
 version = "1.0"
 description = "OpenAPI Specifications for the Binance Public Spot API\n\nAPI documents:\n  - [https://github.com/binance/binance-spot-api-docs](https://github.com/binance/binance-spot-api-docs)\n  - [https://binance-docs.github.io/apidocs/spot/en](https://binance-docs.github.io/apidocs/spot/en)"
 maintainers = [
@@ -74,7 +74,7 @@ ignore = [
 
 [tool.mypy]
 python_version = "3.10"         # the supported floor, not whichever interpreter is local
-files = ["binance"]
+files = ["binance_public_spot_api"]
 strict = true
 warn_unreachable = true
 enable_error_code = ["redundant-expr", "truthy-bool", "ignore-without-code", "possibly-undefined"]

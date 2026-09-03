@@ -2,13 +2,14 @@
 
 # Staking — operations
 
-Accessor: `client.staking` · Source: `binance/apis/staking.py` · 12 operations
+Accessor: `client.staking` · Source: `binance_public_spot_api/apis/staking.py` · 12 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
 ### client.staking.eth_staking_account_v2_user_data
 
 - **Route**: `GET /sapi/v2/eth-staking/account`
+- **Auth**: `api_key_auth`
 - **Signature**: `def eth_staking_account_v2_user_data(timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -19,13 +20,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV2EthStakingAccountResponse` | `binance/models/sapi_v2_eth_staking_account_response.py` |
-| `EthStakingAccountV2UserDataErrorBody` | `binance/errors/eth_staking_account_v2_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV2EthStakingAccountResponse` | `binance_public_spot_api/models/sapi_v2_eth_staking_account_response.py` |
+| `EthStakingAccountV2UserDataErrorBody` | `binance_public_spot_api/errors/eth_staking_account_v2_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.get_beth_rewards_distribution_history_user_data
 
 - **Route**: `GET /sapi/v1/eth-staking/eth/history/rewardsHistory`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_beth_rewards_distribution_history_user_data(timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, current: int | None = None, size: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `current` — query · `size` — query · `recv_window` — query `recvWindow`
@@ -36,13 +38,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingEthHistoryRewardsHistoryResponse` | `binance/models/sapi_v1_eth_staking_eth_history_rewards_history_response.py` |
-| `GetBethRewardsDistributionHistoryUserDataErrorBody` | `binance/errors/get_beth_rewards_distribution_history_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingEthHistoryRewardsHistoryResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_eth_history_rewards_history_response.py` |
+| `GetBethRewardsDistributionHistoryUserDataErrorBody` | `binance_public_spot_api/errors/get_beth_rewards_distribution_history_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.get_eth_redemption_history_user_data
 
 - **Route**: `GET /sapi/v1/eth-staking/eth/history/redemptionHistory`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_eth_redemption_history_user_data(timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, current: int | None = None, size: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `current` — query · `size` — query · `recv_window` — query `recvWindow`
@@ -53,13 +56,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingEthHistoryRedemptionHistoryResponse` | `binance/models/sapi_v1_eth_staking_eth_history_redemption_history_response.py` |
-| `GetEthRedemptionHistoryUserDataErrorBody` | `binance/errors/get_eth_redemption_history_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingEthHistoryRedemptionHistoryResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_eth_history_redemption_history_response.py` |
+| `GetEthRedemptionHistoryUserDataErrorBody` | `binance_public_spot_api/errors/get_eth_redemption_history_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.get_eth_staking_history_user_data
 
 - **Route**: `GET /sapi/v1/eth-staking/eth/history/stakingHistory`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_eth_staking_history_user_data(timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, current: int | None = None, size: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `current` — query · `size` — query · `recv_window` — query `recvWindow`
@@ -70,13 +74,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingEthHistoryStakingHistoryResponse` | `binance/models/sapi_v1_eth_staking_eth_history_staking_history_response.py` |
-| `GetEthStakingHistoryUserDataErrorBody` | `binance/errors/get_eth_staking_history_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingEthHistoryStakingHistoryResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_eth_history_staking_history_response.py` |
+| `GetEthStakingHistoryUserDataErrorBody` | `binance_public_spot_api/errors/get_eth_staking_history_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.get_wbeth_rate_history_user_data
 
 - **Route**: `GET /sapi/v1/eth-staking/eth/history/rateHistory`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_wbeth_rate_history_user_data(timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, current: int | None = None, size: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `current` — query · `size` — query · `recv_window` — query `recvWindow`
@@ -87,13 +92,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingEthHistoryRateHistoryResponse` | `binance/models/sapi_v1_eth_staking_eth_history_rate_history_response.py` |
-| `GetWbethRateHistoryUserDataErrorBody` | `binance/errors/get_wbeth_rate_history_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingEthHistoryRateHistoryResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_eth_history_rate_history_response.py` |
+| `GetWbethRateHistoryUserDataErrorBody` | `binance_public_spot_api/errors/get_wbeth_rate_history_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.get_wbeth_rewards_history_user_data
 
 - **Route**: `GET /sapi/v1/eth-staking/eth/history/wbethRewardsHistory`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_wbeth_rewards_history_user_data(timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, current: int | None = None, size: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `current` — query · `size` — query · `recv_window` — query `recvWindow`
@@ -104,13 +110,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingEthHistoryWbethRewardsHistoryResponse` | `binance/models/sapi_v1_eth_staking_eth_history_wbeth_rewards_history_response.py` |
-| `GetWbethRewardsHistoryUserDataErrorBody` | `binance/errors/get_wbeth_rewards_history_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingEthHistoryWbethRewardsHistoryResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_eth_history_wbeth_rewards_history_response.py` |
+| `GetWbethRewardsHistoryUserDataErrorBody` | `binance_public_spot_api/errors/get_wbeth_rewards_history_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.get_wbeth_unwrap_history_user_data
 
 - **Route**: `GET /sapi/v1/eth-staking/wbeth/history/unwrapHistory`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_wbeth_unwrap_history_user_data(timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, current: int | None = None, size: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `current` — query · `size` — query · `recv_window` — query `recvWindow`
@@ -121,13 +128,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingWbethHistoryUnwrapHistoryResponse` | `binance/models/sapi_v1_eth_staking_wbeth_history_unwrap_history_response.py` |
-| `GetWbethUnwrapHistoryUserDataErrorBody` | `binance/errors/get_wbeth_unwrap_history_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingWbethHistoryUnwrapHistoryResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_wbeth_history_unwrap_history_response.py` |
+| `GetWbethUnwrapHistoryUserDataErrorBody` | `binance_public_spot_api/errors/get_wbeth_unwrap_history_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.get_wbeth_wrap_history_user_data
 
 - **Route**: `GET /sapi/v1/eth-staking/wbeth/history/wrapHistory`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_wbeth_wrap_history_user_data(timestamp: int, signature: str, *, start_time: int | None = None, end_time: int | None = None, current: int | None = None, size: int | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `start_time` — query `startTime` · `end_time` — query `endTime` · `current` — query · `size` — query · `recv_window` — query `recvWindow`
@@ -138,13 +146,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingWbethHistoryWrapHistoryResponse` | `binance/models/sapi_v1_eth_staking_wbeth_history_wrap_history_response.py` |
-| `GetWbethWrapHistoryUserDataErrorBody` | `binance/errors/get_wbeth_wrap_history_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingWbethHistoryWrapHistoryResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_wbeth_history_wrap_history_response.py` |
+| `GetWbethWrapHistoryUserDataErrorBody` | `binance_public_spot_api/errors/get_wbeth_wrap_history_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.get_current_eth_staking_quota_user_data
 
 - **Route**: `GET /sapi/v1/eth-staking/eth/quota`
+- **Auth**: `api_key_auth`
 - **Signature**: `def get_current_eth_staking_quota_user_data(timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `timestamp`, `signature`
 - **Params**: `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -155,13 +164,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingEthQuotaResponse` | `binance/models/sapi_v1_eth_staking_eth_quota_response.py` |
-| `GetCurrentEthStakingQuotaUserDataErrorBody` | `binance/errors/get_current_eth_staking_quota_user_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingEthQuotaResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_eth_quota_response.py` |
+| `GetCurrentEthStakingQuotaUserDataErrorBody` | `binance_public_spot_api/errors/get_current_eth_staking_quota_user_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.redeem_eth_trade
 
 - **Route**: `POST /sapi/v1/eth-staking/eth/redeem`
+- **Auth**: `api_key_auth`
 - **Signature**: `def redeem_eth_trade(amount: float, timestamp: int, signature: str, *, asset: str | None = None, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `amount`, `timestamp`, `signature`
 - **Params**: `amount` — query · `timestamp` — query · `signature` — query · `asset` — query · `recv_window` — query `recvWindow`
@@ -172,13 +182,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingEthRedeemResponse` | `binance/models/sapi_v1_eth_staking_eth_redeem_response.py` |
-| `RedeemEthTradeErrorBody` | `binance/errors/redeem_eth_trade_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingEthRedeemResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_eth_redeem_response.py` |
+| `RedeemEthTradeErrorBody` | `binance_public_spot_api/errors/redeem_eth_trade_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.subscribe_eth_staking_v2_trade
 
 - **Route**: `POST /sapi/v2/eth-staking/eth/stake`
+- **Auth**: `api_key_auth`
 - **Signature**: `def subscribe_eth_staking_v2_trade(amount: float, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `amount`, `timestamp`, `signature`
 - **Params**: `amount` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -189,13 +200,14 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV2EthStakingEthStakeResponse` | `binance/models/sapi_v2_eth_staking_eth_stake_response.py` |
-| `SubscribeEthStakingV2TradeErrorBody` | `binance/errors/subscribe_eth_staking_v2_trade_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV2EthStakingEthStakeResponse` | `binance_public_spot_api/models/sapi_v2_eth_staking_eth_stake_response.py` |
+| `SubscribeEthStakingV2TradeErrorBody` | `binance_public_spot_api/errors/subscribe_eth_staking_v2_trade_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.staking.wrap_beth_trade
 
 - **Route**: `POST /sapi/v1/eth-staking/wbeth/wrap`
+- **Auth**: `api_key_auth`
 - **Signature**: `def wrap_beth_trade(amount: float, timestamp: int, signature: str, *, recv_window: int | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `amount`, `timestamp`, `signature`
 - **Params**: `amount` — query · `timestamp` — query · `signature` — query · `recv_window` — query `recvWindow`
@@ -206,7 +218,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SapiV1EthStakingWbethWrapResponse` | `binance/models/sapi_v1_eth_staking_wbeth_wrap_response.py` |
-| `WrapBethTradeErrorBody` | `binance/errors/wrap_beth_trade_error.py` |
-| `Error` | `binance/models/error.py` |
+| `SapiV1EthStakingWbethWrapResponse` | `binance_public_spot_api/models/sapi_v1_eth_staking_wbeth_wrap_response.py` |
+| `WrapBethTradeErrorBody` | `binance_public_spot_api/errors/wrap_beth_trade_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 

@@ -2,7 +2,7 @@
 
 # Market — operations
 
-Accessor: `client.market` · Source: `binance/apis/market.py` · 15 operations
+Accessor: `client.market` · Source: `binance_public_spot_api/apis/market.py` · 15 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded, and an operation with no table mentions nothing but builtins and those.
 
@@ -18,10 +18,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TypeOrStr` | `binance/models/enums/type.py` |
-| `ApiV3Ticker24HrResponse` | `binance/models/unions/api_v3_ticker24_hr_response.py` |
-| `HrTickerPriceChangeStatistics24ErrorBody` | `binance/errors/hr_ticker_price_change_statistics24_error.py` |
-| `Error` | `binance/models/error.py` |
+| `TypeOrStr` | `binance_public_spot_api/models/enums/type.py` |
+| `ApiV3Ticker24HrResponse` | `binance_public_spot_api/models/unions/api_v3_ticker24_hr_response.py` |
+| `HrTickerPriceChangeStatistics24ErrorBody` | `binance_public_spot_api/errors/hr_ticker_price_change_statistics24_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.check_server_time
 
@@ -33,7 +33,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ApiV3TimeResponse` | `binance/models/api_v3_time_response.py` |
+| `ApiV3TimeResponse` | `binance_public_spot_api/models/api_v3_time_response.py` |
 
 ### client.market.compressed_aggregate_trades_list
 
@@ -48,9 +48,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AggTrade` | `binance/models/agg_trade.py` |
-| `CompressedAggregateTradesListErrorBody` | `binance/errors/compressed_aggregate_trades_list_error.py` |
-| `Error` | `binance/models/error.py` |
+| `AggTrade` | `binance_public_spot_api/models/agg_trade.py` |
+| `CompressedAggregateTradesListErrorBody` | `binance_public_spot_api/errors/compressed_aggregate_trades_list_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.current_average_price
 
@@ -65,9 +65,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ApiV3AvgPriceResponse` | `binance/models/api_v3_avg_price_response.py` |
-| `CurrentAveragePriceErrorBody` | `binance/errors/current_average_price_error.py` |
-| `Error` | `binance/models/error.py` |
+| `ApiV3AvgPriceResponse` | `binance_public_spot_api/models/api_v3_avg_price_response.py` |
+| `CurrentAveragePriceErrorBody` | `binance_public_spot_api/errors/current_average_price_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.exchange_information
 
@@ -81,9 +81,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ApiV3ExchangeInfoResponse` | `binance/models/api_v3_exchange_info_response.py` |
-| `ExchangeInformationErrorBody` | `binance/errors/exchange_information_error.py` |
-| `Error` | `binance/models/error.py` |
+| `ApiV3ExchangeInfoResponse` | `binance_public_spot_api/models/api_v3_exchange_info_response.py` |
+| `ExchangeInformationErrorBody` | `binance_public_spot_api/errors/exchange_information_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.kline_candlestick_data
 
@@ -98,10 +98,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `IntervalOrStr` | `binance/models/enums/interval.py` |
-| `ApiV3KlinesResponse` | `binance/models/unions/api_v3_klines_response.py` |
-| `KlineCandlestickDataErrorBody` | `binance/errors/kline_candlestick_data_error.py` |
-| `Error` | `binance/models/error.py` |
+| `IntervalOrStr` | `binance_public_spot_api/models/enums/interval.py` |
+| `ApiV3KlinesResponse` | `binance_public_spot_api/models/unions/api_v3_klines_response.py` |
+| `KlineCandlestickDataErrorBody` | `binance_public_spot_api/errors/kline_candlestick_data_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.old_trade_lookup
 
@@ -115,7 +115,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Trade` | `binance/models/trade.py` |
+| `Trade` | `binance_public_spot_api/models/trade.py` |
 
 ### client.market.order_book
 
@@ -130,9 +130,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ApiV3DepthResponse` | `binance/models/api_v3_depth_response.py` |
-| `OrderBookErrorBody` | `binance/errors/order_book_error.py` |
-| `Error` | `binance/models/error.py` |
+| `ApiV3DepthResponse` | `binance_public_spot_api/models/api_v3_depth_response.py` |
+| `OrderBookErrorBody` | `binance_public_spot_api/errors/order_book_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.recent_trades_list
 
@@ -147,9 +147,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Trade` | `binance/models/trade.py` |
-| `RecentTradesListErrorBody` | `binance/errors/recent_trades_list_error.py` |
-| `Error` | `binance/models/error.py` |
+| `Trade` | `binance_public_spot_api/models/trade.py` |
+| `RecentTradesListErrorBody` | `binance_public_spot_api/errors/recent_trades_list_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.rolling_window_price_change_statistics
 
@@ -163,9 +163,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ApiV3TickerResponse` | `binance/models/api_v3_ticker_response.py` |
-| `RollingWindowPriceChangeStatisticsErrorBody` | `binance/errors/rolling_window_price_change_statistics_error.py` |
-| `Error` | `binance/models/error.py` |
+| `ApiV3TickerResponse` | `binance_public_spot_api/models/api_v3_ticker_response.py` |
+| `RollingWindowPriceChangeStatisticsErrorBody` | `binance_public_spot_api/errors/rolling_window_price_change_statistics_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.symbol_order_book_ticker
 
@@ -179,9 +179,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ApiV3TickerBookTickerResponse` | `binance/models/unions/api_v3_ticker_book_ticker_response.py` |
-| `SymbolOrderBookTickerErrorBody` | `binance/errors/symbol_order_book_ticker_error.py` |
-| `Error` | `binance/models/error.py` |
+| `ApiV3TickerBookTickerResponse` | `binance_public_spot_api/models/unions/api_v3_ticker_book_ticker_response.py` |
+| `SymbolOrderBookTickerErrorBody` | `binance_public_spot_api/errors/symbol_order_book_ticker_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.symbol_price_ticker
 
@@ -195,9 +195,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ApiV3TickerPriceResponse` | `binance/models/unions/api_v3_ticker_price_response.py` |
-| `SymbolPriceTickerErrorBody` | `binance/errors/symbol_price_ticker_error.py` |
-| `Error` | `binance/models/error.py` |
+| `ApiV3TickerPriceResponse` | `binance_public_spot_api/models/unions/api_v3_ticker_price_response.py` |
+| `SymbolPriceTickerErrorBody` | `binance_public_spot_api/errors/symbol_price_ticker_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.test_connectivity
 
@@ -219,10 +219,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TypeOrStr` | `binance/models/enums/type.py` |
-| `ApiV3TickerTradingDayResponse` | `binance/models/unions/api_v3_ticker_trading_day_response.py` |
-| `TradingDayTickerErrorBody` | `binance/errors/trading_day_ticker_error.py` |
-| `Error` | `binance/models/error.py` |
+| `TypeOrStr` | `binance_public_spot_api/models/enums/type.py` |
+| `ApiV3TickerTradingDayResponse` | `binance_public_spot_api/models/unions/api_v3_ticker_trading_day_response.py` |
+| `TradingDayTickerErrorBody` | `binance_public_spot_api/errors/trading_day_ticker_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
 ### client.market.ui_klines
 
@@ -237,8 +237,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `IntervalOrStr` | `binance/models/enums/interval.py` |
-| `ApiV3UiKlinesResponse` | `binance/models/unions/api_v3_ui_klines_response.py` |
-| `UiklinesErrorBody` | `binance/errors/uiklines_error.py` |
-| `Error` | `binance/models/error.py` |
+| `IntervalOrStr` | `binance_public_spot_api/models/enums/interval.py` |
+| `ApiV3UiKlinesResponse` | `binance_public_spot_api/models/unions/api_v3_ui_klines_response.py` |
+| `UiklinesErrorBody` | `binance_public_spot_api/errors/uiklines_error.py` |
+| `Error` | `binance_public_spot_api/models/error.py` |
 
